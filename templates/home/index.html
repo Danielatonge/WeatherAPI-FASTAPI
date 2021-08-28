@@ -48,6 +48,16 @@
     </ul>
     </p>
 
+    {% if events %}
+    <div>
+        <h2>Recent weather events</h2>
+        <ul>
+            {% for item in events %}
+            <li> {{ item.location.city }}, {{ item.location.country }}: {{ item.description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
     </div>
 
 {% endblock %}
