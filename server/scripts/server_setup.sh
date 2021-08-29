@@ -53,11 +53,11 @@ pip install --upgrade httpie glances
 pip install --upgrade gunicorn uvloop httptools
 
 # Setup the web app:
-cd /apps/app_repo/ch08-deployment
+cd /apps/app_repo
 pip install -r requirements.txt
 
 # Copy and enable the daemon
-cp /apps/app_repo/ch08-deployment/server/units/weather.service /etc/systemd/system/
+cp /apps/app_repo/server/units/weather.service /etc/systemd/system/
 
 systemctl start weather
 systemctl status weather
@@ -69,7 +69,7 @@ apt install nginx
 # CAREFUL HERE. If you are using default, maybe skip this
 rm /etc/nginx/sites-enabled/default
 
-cp /apps/app_repo/ch08-deployment/server/nginx/weather.nginx /etc/nginx/sites-enabled/
+cp /apps/app_repo/server/nginx/weather.nginx /etc/nginx/sites-enabled/
 update-rc.d nginx enable
 service nginx restart
 
